@@ -1,7 +1,6 @@
 # constrained_learning
 Handy package for training output constrained neural networks. As of now, this package only contains 
-constrained extreme learning machines (CELM), constraint multi layer neural networks will be added in the future.
-
+constrained extreme learning machines (CELM), constrained multi layer neural networks will be added in the future.ed
 
 # Structure
 The source code is contained in the [src](src) folder.
