@@ -5,7 +5,7 @@ __author__ = 'Jannick Stranghöner'
 from abc import ABC, abstractmethod
 import numpy as np
 
-from utils import checkArray
+import utils
 
 
 class SamplingRegion(ABC):
@@ -22,8 +22,8 @@ class Box(SamplingRegion):
     """N-dimensional box whose sides are orthogonal to the coordinate axes."""
     def __init__(self, upper_bounds, lower_bounds):
 
-        self.upper_bounds = upper_bounds if checkArray(upper_bounds) else np.asarray(upper_bounds)
-        self.lower_bounds = lower_bounds if checkArray(lower_bounds) else np.asarray(lower_bounds)
+        self.upper_bounds = upper_bounds if utils.check_array(upper_bounds) else np.asarray(upper_bounds)
+        self.lower_bounds = lower_bounds if utils.check_array(lower_bounds) else np.asarray(lower_bounds)
 
         if self.upper_bounds.shape != self.lower_bounds.shape or self.upper_bounds.ndim != 1:
             raise ValueError("The dimensionality of minimum and maximum values does not match")

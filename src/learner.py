@@ -409,7 +409,7 @@ class CELM(ELM):
                 self._ceqcs[i].min_test_value = self.__get_eq_test_value(self._ceqcs[i].value, -self._eps)
 
     def grad(self, u):
-        return -np.array([-self.__fct(u, [[i]], [1]) for i in range(self.inp_dim)]).T
+        return np.array([-self.__fct(u, [[i]], [1]) for i in range(self.inp_dim)]).T
 
     def train(self, x, y):
         """Runs sequential quadratic program to minimize || self(x)-y || and respect possibly continuous constraints."""

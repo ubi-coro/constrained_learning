@@ -73,7 +73,6 @@ zz = utils.make_grid_from_seq(out_seq[:, 0].T, int(np.sqrt(num_points)), int(np.
 # callable factor for scalar product in constraint
 def lyapunov_gradient_factor(x):
     grad = candidate.grad(x).T
-    grad /= np.linalg.norm(grad, axis=1)[:, np.newaxis]
     return grad
 
 
@@ -88,7 +87,7 @@ model = CELM(inp_dim=2,
                  CIEQC(region=region,
                        partials=[[[], []]],
                        factors=[lyapunov_gradient_factor],
-                       satisfaction_threshold=0.95,
+                       satisfaction_threshold=0.998,
                        max_value=np.inf,
                        min_value=0)
              ]  # forces stability through lyapunov candidate
@@ -97,7 +96,7 @@ model = CELM(inp_dim=2,
 print('\nTrain dynamical system ...')
 model.init(x)
 model.train(x, y)
-p, _ = utils.integrate(model, x0=x[0] + np.array([-0.04, .1]), order=1, t_max=20, dt=0.001,
+p, _ = utils.integrate(model, x0=x[0], order=1, t_max=20, dt=0.001,
                        ub=region.upper_bounds, lb=region.lower_bounds, method='single-step')
 
 ### plot results ###

@@ -22,7 +22,7 @@ VSCode).
 
 class BaseConstraint(ABC):
 
-    def __init__(self, weight: float = 1.0, label: string = '', lagrange_alpha: float = 1e-3, **kwargs):
+    def __init__(self, weight: float = 1.0, label: str = '', lagrange_alpha: float = 1e-3, **kwargs):
         self.inp_dim = None
         self.weight = weight
         self.label = label
