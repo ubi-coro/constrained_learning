@@ -1,10 +1,10 @@
 # constrained_learning
 Handy package for training output constrained neural networks. As of now, this package only contains 
-constrained extreme learning machines (CELM), constrained multi layer neural networks will be added in the future.ed
+constrained extreme learning machines (CELM), constrained multi layer neural networks will be added in the future.
 
 # Structure
 The source code is contained in the [src](src) folder.
-The implementation of the constrained (C)ELM resides in [src/learner.py](src/learner.py).
+The implementation of the (C)ELM can be found in [src/learner.py](src/learner.py).
 
 To install the package:
 ```
@@ -17,7 +17,7 @@ python examples\gaussian.py
 python examples\monotone_quadratic.py
 ```
 
-To run a more complex example that involves learning Lyapunov function, which in turn
+To run a more complex example that involves learning a Lyapunov function, which in turn
 defines constraints for the learning process of a stable dynamical system:
 ``` 
 python examples\stable_dynamical_system.py
