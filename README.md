@@ -13,8 +13,9 @@ pip install -r requirements.txt
 
 To run the synthetic examples: 
 ``` 
-python examples\gaussian.py
+python examples\flat_gaussian.py
 python examples\monotone_quadratic.py
+python examples\ode.py
 ```
 
 To run a more complex example that involves learning a Lyapunov function, which in turn
@@ -26,4 +27,4 @@ python examples\stable_dynamical_system.py
 For reference, take a look at [this](https://www.neuralautomation.de/app/download/25504160/LemmeNeumannReinhartSteil_NeuCom2014.pdf) paper.
 
 # License
-MIT license - See [LICENSE](LICENSE).
+MIT license - See [LICENSE](LICENSE).   

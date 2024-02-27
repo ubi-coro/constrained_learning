@@ -25,7 +25,7 @@ model = CELM(inp_dim=1,
              deqcs=[con],
              obj_fcts=[obj_fct])
 
-# Fit the gaussian
+# Fit the ode
 model.init(x)
 model.train(x, y)
 y_hat = model.apply(x)

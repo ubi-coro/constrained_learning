@@ -27,7 +27,7 @@ model = CELM(inp_dim=1,
              hid_dim=30,
              cieqcs=[con])
 
-# Fit the gaussian
+# Fit the quadratic
 model.init(x)
 model.train(x, y)
 y_hat = model.apply(x)
